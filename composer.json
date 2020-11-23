@@ -1,6 +1,6 @@
 {
     "name": "awema-pl/module-sticky-params",
-    "description": ":description",
+    "description": "Module sticky params.",
     "type": "library",
     "license": "MIT",
     "authors": [
