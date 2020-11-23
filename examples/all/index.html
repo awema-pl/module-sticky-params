@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky params test</title>
+    <link rel="stylesheet" href="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/indigo-layout/v1.x.x/css/main.css">
+    
+    <!-- config -->
+    <script>
+        const AWEMA_CONFIG = {
+            key: '5cd207e2c94eb723c3307764a5693def',
+            dev: true,
+            stickyParams: {
+                '*': ['limit'],
+                '/filter/*': ['filter'],
+                '/all/': ['*']
+            }
+        }
+    </script>
+
+    <!-- sticky params -->
+    <script src="/js/main.js" async defer></script>
+
+    <!-- modules -->
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/context-menu/v1.x.x/js/main.js"></script>
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/filter-wrapper/v1.x.x/js/main.js"></script>
+    <script src="https://cdn.awema.pl/5cd207e2c94eb723c3307764a5693def/awema-pl/base-js/v1.x.x/js/main.js"></script>
+</head>
+<body>
+    <div id="awema-app" class="mainwrapper">
+        <div class="frame">
+            <div class="frame__aside">
+                <div class="frame__aside-title">
+                    Test
+                </div>
+            </div>
+            <div class="frame__right">
+                <div class="frame__header">
+                    <div class="frame__header-line">
+                        <h1 class="frame__header-title">Sticky params test</h1>
+                    </div>
+                </div>
+                <div class="frame__content">
+
+                    <!-- filter -->
+                    <div class="section">
+                        <h2>Filter</h2>
+                        <div class="btn-group">
+                            <filter-builder :param="{filter: 'one'}" label="one"></filter-builder>
+                            <filter-builder :param="{filter: 'two'}" label="two"></filter-builder>
+                            <filter-builder :param="{filter: 'three'}" label="three"></filter-builder>
+                        </div>
+                    </div>
+                    
+                    <!-- context-menu -->
+                    <div class="section">
+                        <h2>Context menu</h2>
+                        <context-menu>
+                            <cm-query :param="{limit: 15}">15</cm-query>
+                            <cm-query :param="{limit: 50}">50</cm-query>
+                            <cm-query :param="{limit: 100}">100</cm-query>
+                            <cm-query :param="{limit: 150}">150</cm-query>
+                        </context-menu>
+                    </div>
+
+                    <!-- param 1 -->
+                    <div class="section">
+                        <h2>Param 1</h2>
+                        <div class="btn-group">
+                            <filter-builder :param="{'param 1': 'one'}" label="one"></filter-builder>
+                            <filter-builder :param="{'param 1': 'two'}" label="two"></filter-builder>
+                            <filter-builder :param="{'param 1': 'three'}" label="three"></filter-builder>
+                        </div>
+                    </div>
+
+                    <!-- param 2 -->
+                    <div class="section">
+                        <h2>Param 2</h2>
+                        <div class="btn-group">
+                            <filter-builder :param="{'param 2': 'one'}" label="one"></filter-builder>
+                            <filter-builder :param="{'param 2': 'two'}" label="two"></filter-builder>
+                            <filter-builder :param="{'param 2': 'three'}" label="three"></filter-builder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+    "name": "sticky-params",
+    "version": "1.0.0",
+    "description": "Saving GET params for specific route",
+    "main": "dist/js/main.js",
+    "scripts": {
+        "start": "npm run watch",
+        "watch": "cross-env NODE_ENV=development BROWSERSLIST_ENV=modern gulp",
+        "watch:legacy": "cross-env NODE_ENV=development BROWSERSLIST_ENV=legacy gulp",
+        "build": "npm run build:modern && npm run build:legacy",
+        "build:modern": "cross-env NODE_ENV=production cross-env BROWSERSLIST_ENV=modern gulp",
+        "build:legacy": "cross-env NODE_ENV=production cross-env BROWSERSLIST_ENV=legacy rollup -c"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.awema.pl:awema-pl/module-sticky-params.git"
+    },
+    "keywords": [
+        "save",
+        "get",
+        "params"
+    ],
+    "files": [
+        "dist/js/main.js",
+        "dist/js/main.legacy.js"
+    ],
+    "awema-files": [
+        "js/main.js",
+        "js/main.legacy.js"
+    ],
+    "author": "AwemaCode (https://www.awema.de/)",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "browser-sync": "^2.26.3",
+        "core-js": "^2.6.3",
+        "cross-env": "^5.2.0",
+        "gulp": "^4.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-noop": "^1.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rollup": "^2.16.2",
+        "rollup": "^0.68.2",
+        "rollup-plugin-babel": "^4.3.2",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-includepaths": "^0.2.3",
+        "rollup-plugin-json": "^3.1.0",
+        "rollup-plugin-license": "^0.7.0",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-terser": "^4.0.2"
+    }
+}

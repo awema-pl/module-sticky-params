@@ -1,0 +1,50 @@
+{
+    "name": "awema-pl/module-sticky-params",
+    "description": ":description",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karol Golec",
+            "email": "karolgolec10@gmail.com",
+            "homepage": "https://github.pl/awema-pl/module-sticky-params",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "karolgolec10@gmail.com"
+    },
+    "homepage": "https://github.com/awema-pl/module-sticky-params",
+    "keywords": [
+        "Laravel",
+        "StickyParams"
+    ],
+    "require": {
+        "illuminate/support": "~5|~6|~7|~8|~9"
+    },
+    "autoload": {
+        "psr-4": {
+            "AwemaPL\\StickyParams\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AwemaPL\\StickyParams\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AwemaPL\\StickyParams\\StickyParamsServiceProvider"
+            ],
+            "aliases": {
+                "StickyParams": "AwemaPL\\StickyParams\\Facades\\StickyParams"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
